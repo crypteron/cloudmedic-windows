@@ -1,7 +1,9 @@
 # Provision a webapp using CloudMedic.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fchef-json-parameters-linux-vm%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fchef-json-parameters-linux-vm%2Fazuredeploy.json" target="_blank">
+<a href="https://azuredeploy.net/?repository=https://github.com/ericsengithub/cloudmedic-windows" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+<a href="http://armviz.io/?repository=https://github.com/ericsengithub/cloudmedic-windows" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
@@ -16,6 +18,4 @@ Links about CloudMedic specifications and capabilities:
 <a href="https://cloudmedictest.azurewebsites.net/app/#/login" target="_blank">Example Webapp</a>
  
 To deploy the Cloudmedic webapp as your own, you can follow the deploy to azure link up at the top of 
-this README or you can click "Links for deployment" and copy and paste the template into template deployment on azure. Fill in the values with the size and rates you would like to use on azure and create. 
-
-
+this README or you can click "Links for deployment" and copy and paste the template into template deployment on azure. Fill in the values with the size and rates you would like to use on azure and create.
