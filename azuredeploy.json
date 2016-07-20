@@ -56,7 +56,7 @@
   },
 
   "resources": [
-    {
+     {
       "name": "[variables('sqlserverName')]",
       "type": "Microsoft.Sql/servers",
       "location": "[resourceGroup().location]",
@@ -116,9 +116,9 @@
       },
       "properties": {
         "name": "[variables('hostingPlanName')]"
-      }
-    },
-    {
+      },
+      "resources": [ 
+      {
         "name": "appsettings",
         "type": "config",
         "apiVersion": "2015-08-01",
@@ -128,6 +128,8 @@
         "properties": {
             "secretcode": "[parameter('appSecret')]"      
         }
+      }
+     ]
     },
     {
       "apiVersion": "2015-08-01",
