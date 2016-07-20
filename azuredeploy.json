@@ -124,8 +124,12 @@
         "apiVersion": "2015-08-01",
         "dependsOn": [
             "[concat('Microsoft.Web/sites/', variables('webSiteName'))]",
-            "Microsoft.Web/serverfarms"
+            "[variables('hostingPlanName')]"
         ],
+        "tags": {
+            "displayName": "WebAppSettings"
+        },
+       
         "properties": {
             "secretcode": "[parameter('appSecret')]"      
         }
