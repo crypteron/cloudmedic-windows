@@ -189,8 +189,6 @@
         "name": "[variables('hostingPlanName')]"
       }
     },
-    
-
     {
         "name": "appsettings",
         "type": "config",
@@ -198,9 +196,6 @@
         "dependsOn": [
             "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
         ],
-        "tags": {
-            "displayName": "WebAppSettings"
-        },
         "properties": {
             "secretcode": "[parameter('appSecret')]"      
         }
