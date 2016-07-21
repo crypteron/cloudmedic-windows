@@ -142,7 +142,8 @@
       "type": "Microsoft.Web/sites",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms',variables('hostingPlanName'))]"
+        "[variables('hostingPlanName')]"
+
       ],
       "tags": {
         "[concat('hidden-related:', resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName')))]": "empty",
@@ -163,24 +164,10 @@
       "resources": [
         {
           "apiVersion": "2015-08-01",
-          "type": "config",
-          "name": "connectionstrings",
-          "dependsOn": [
-            "[variables('webSiteName')]"
-          ],
-          "properties": {
-            "DefaultConnection": {
-              "value": "[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', parameters('databaseName'), ';User Id=', parameters('administratorLogin'), '@', variables('sqlserverName'), ';Password=', parameters('administratorLoginPassword'), ';')]",
-              "type": "SQLServer"
-            }
-          }
-        },
-        {
-          "apiVersion": "2015-08-01",
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('webSiteName'))]"
+            "[variables('webSiteName')]"
           ],
           "properties": {
             "RepoUrl": "[parameters('repoURL')]",
