@@ -47,12 +47,18 @@
       "metadata": {
         "description": "The name of the new database to create."
       }
+    },
+    "sqlServerName": {
+      "type": "string",
+      "metadata":{
+        "description": "The name of your sql Server "
+      }
     }
   },
   "variables": {
     "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",
-    "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]",
-    "sqlserverName": "[concat('sqlserver', uniqueString(resourceGroup().id))]"
+    "webSiteName": "[parameters('webSiteName')]",
+    "sqlserverName": "[parameters('sqlServerName')]"
   },
 
   "resources": [
