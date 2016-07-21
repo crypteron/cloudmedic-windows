@@ -131,7 +131,7 @@
         },
        
         "properties": {
-            "secretcode": "[parameter('appSecret')]"      
+            "secretcode": "[parameters('appSecret')]"      
         }
       }
      ]
