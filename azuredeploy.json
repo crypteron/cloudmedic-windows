@@ -19,7 +19,7 @@
     "appSecret": {
       "type": "string",
       "metadata": {
-        "description":  "App secret value for Web App"
+        "description":  "App secret value from crypteron"
       }
     },
     "webSiteName":{
@@ -40,6 +40,13 @@
         "description": "The password of the admin user of the SQL Server"
       }
 
+    },
+    "databaseName": {
+      "type": "string",
+      "defaultValue": "cloudmedicdatabase",
+      "metadata": {
+        "description": "The name of the new database to create."
+      }
     },
     "sqlServerName": {
       "type": "string",
@@ -69,7 +76,7 @@
       },
       "resources": [
         {
-          "name": "cloudmedicdatabase",
+          "name": "[parameters('databaseName')]",
           "type": "databases",
           "location": "[resourceGroup().location]",
           "tags": {
@@ -136,7 +143,7 @@
           "connectionStrings": [
              {
             "name": "MyDbContext",
-            "connectionString":"[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', cloudmedicdatabase, ';User Id=', parameters('administratorLogin'), '@', variables('sqlserverName'), ';Password=', parameters('administratorLoginPassword'), ';')]",
+            "connectionString":"[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', parameters('databaseName'), ';User Id=', parameters('administratorLogin'), '@', variables('sqlserverName'), ';Password=', parameters('administratorLoginPassword'), ';')]",
             "type": 2
             }
           ]
