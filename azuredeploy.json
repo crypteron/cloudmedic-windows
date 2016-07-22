@@ -41,13 +41,6 @@
       }
 
     },
-    "databaseName": {
-      "type": "string",
-      "defaultValue": "cloudmedicdatabase",
-      "metadata": {
-        "description": "The name of the new database to create."
-      }
-    },
     "sqlServerName": {
       "type": "string",
       "metadata":{
@@ -58,7 +51,8 @@
   "variables": {
     "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",
     "webSiteName": "[parameters('webSiteName')]",
-    "sqlserverName": "[parameters('sqlServerName')]"
+    "sqlserverName": "[parameters('sqlServerName')]",
+    "databaseName":"['cloudmedicdatabase']"
   },
 
   "resources": [
@@ -76,7 +70,7 @@
       },
       "resources": [
         {
-          "name": "[parameters('databaseName')]",
+          "name": "[variables('databaseName')]",
           "type": "databases",
           "location": "[resourceGroup().location]",
           "tags": {
@@ -143,7 +137,7 @@
           "connectionStrings": [
              {
             "name": "MyDbContext",
-            "connectionString":"[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', parameters('databaseName'), ';User Id=', parameters('administratorLogin'), '@', variables('sqlserverName'), ';Password=', parameters('administratorLoginPassword'), ';')]",
+            "connectionString":"[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('databaseName'), ';User Id=', parameters('administratorLogin'), '@', variables('sqlserverName'), ';Password=', parameters('administratorLoginPassword'), ';')]",
             "type": 2
             }
           ]
