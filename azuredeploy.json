@@ -2,20 +2,6 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "repoURL": {
-      "type": "string",
-      "defaultValue": "https://github.com/berrypunny/cloudmedic-deploy-public.git",
-       "metadata": {
-          "description": "The URL for the GitHub repository that contains the project to deploy."
-      }
-    },
-    "branch": {
-       "type": "string",
-      "defaultValue": "master",
-      "metadata": {
-         "description": "The branch of the GitHub repository to use."
-       }
-    },
     "appSecret": {
       "type": "string",
       "metadata": {
@@ -52,7 +38,9 @@
     "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",
     "webSiteName": "[parameters('webSiteName')]",
     "sqlserverName": "[parameters('sqlServerName')]",
-    "databaseName":"['cloudmedicdatabase']"
+    "databaseName":"['cloudmedicdatabase']",
+    "repoURL":"['https://github.com/berrypunny/cloudmedic-deploy-public.git']",
+    "branch":"['master']"
   },
 
   "resources": [
@@ -152,8 +140,8 @@
             "[variables('webSiteName')]"
           ],
           "properties": {
-            "RepoUrl": "[parameters('repoURL')]",
-            "branch": "[parameters('branch')]",
+            "RepoUrl": "[variables('repoURL')]",
+            "branch": "[variables('branch')]",
             "IsManualIntegration": true
           }
         }, 
