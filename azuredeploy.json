@@ -29,14 +29,14 @@
     },
     "repoURL": {
       "type":"string",
-      "default":"https://github.com/berrypunny/cloudmedic-deploy-public.git",
+      "defaultValue":"https://github.com/berrypunny/cloudmedic-deploy-public.git",
       "metadata":{
         "description":"If you are deploying on your own, you can fork it"
       }
     },
     "branch":{
       "type":"string",
-      "default":"master",
+      "defaultValue":"master",
       "metadata":{
         "description":"The branch you wish to use from github"
       }
