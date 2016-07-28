@@ -1,9 +1,9 @@
 # Provision a webapp using CloudMedic.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2Fraw.githubusercontent.com%2Fericsengithub%2Fcloudmedic-windows%2Fmaster%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2Fraw.githubusercontent.com%2Fyaronguez%2Fcloudmedic-windows%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/?repository=https://github.com/ericsengithub/cloudmedic-windows" target="_blank">
+<a href="http://armviz.io/?repository=https://github.com/yaronguez/cloudmedic-windows" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
