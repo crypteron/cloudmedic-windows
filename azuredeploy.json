@@ -172,7 +172,7 @@
         },
        
         "properties": {
-            "secretcode": "[parameters('appSecret')]",
+            "AppSecret": "[parameters('appSecret')]",
             "sitename": "[parameters('webSiteName')]"    
         }
       }
