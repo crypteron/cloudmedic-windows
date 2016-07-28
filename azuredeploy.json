@@ -29,7 +29,7 @@
     },
     "repoURL": {
       "type":"string",
-      "defaultValue":"https://github.com/berrypunny/cloudmedic-deploy-public.git",
+      "defaultValue":"https://github.com/crypteron/cloudmedic-deploy-public.git",
       "metadata":{
         "description":"If you are deploying on your own, you can fork it"
       }
@@ -53,7 +53,7 @@
     "webSiteName": "[parameters('webSiteName')]",
     "sqlserverName": "[parameters('sqlServerName')]",
     "databaseName":"['cloudmedicdatabase']",
-    "repoURL":"['https://github.com/berrypunny/cloudmedic-deploy-public.git']",
+    "repoURL":"['https://github.com/crypteron/cloudmedic-deploy-public.git']",
     "branch":"['master']"
   },
 
