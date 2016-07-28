@@ -1,6 +1,6 @@
 # Provision a webapp using CloudMedic.
 
-<a href="https://azuredeploy.net/?repository=https://github.com/ericsengithub/cloudmedic-windows" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/github.com/ericsengithub/cloudmedic-windows" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 <a href="http://armviz.io/?repository=https://github.com/ericsengithub/cloudmedic-windows" target="_blank">
