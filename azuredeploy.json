@@ -27,20 +27,7 @@
       }
 
     },
-    "repoURL": {
-      "type":"string",
-      "defaultValue":"https://github.com/berrypunny/cloudmedic-deploy-public.git",
-      "metadata":{
-        "description":"If you are deploying on your own, you can fork it"
-      }
-    },
-    "branch":{
-      "type":"string",
-      "defaultValue":"master",
-      "metadata":{
-        "description":"The branch you wish to use from github"
-      }
-    },
+
     "sqlServerName": {
       "type": "string",
       "metadata":{
@@ -154,8 +141,8 @@
             "[variables('webSiteName')]"
           ],
           "properties": {
-            "RepoUrl": "[parameters('repoURL')]",
-            "branch": "[parameters('branch')]",
+            "RepoUrl": "[variables('repoURL')]",
+            "branch": "[variables('branch')]",
             "IsManualIntegration": true
           }
         }, 
